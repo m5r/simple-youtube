@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
-import YTSearch from 'youtube-api-search';
+import { YTSearch } from './YTSearch';
 import { AppHeader, AppSearchBar, VideoList } from './components';
 
 export default class App extends Component {
@@ -15,13 +15,14 @@ export default class App extends Component {
     this.searchYouTube(term);
   };
 
-  searchYouTube = term => {
+  searchYouTube = async (term) => {
     this.setState({ loading: true });
-    YTSearch({ key: this.API_KEY, term }, videos => {
-      this.setState({
-        loading: false,
-        videos,
-      });
+
+    const videos = await YTSearch({ key: this.API_KEY, term });
+
+    this.setState({
+      loading: false,
+      videos,
     });
   };
 
