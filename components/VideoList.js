@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import { VideoListItem } from './VideoListItem'
+import { VideoListItem } from './VideoListItem';
 
 export const VideoList = ({ videos }) => {
   const { container } = styles;

@@ -20,6 +20,7 @@ export class AppSearchBar extends Component {
           style={searchText}
           value={inputText}
           onChangeText={this.onChangeText}
+          onSubmitEditing={() => onPressSearch(inputText)}
         />
         <Button
           backgroundColor={inputText.length ? '#e62117' : '#CCCCCC'}
