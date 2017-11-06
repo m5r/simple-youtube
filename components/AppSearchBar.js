@@ -12,7 +12,7 @@ export class AppSearchBar extends Component {
   render() {
     const { inputText } = this.state;
     const { onPressSearch, isLoadingVideos } = this.props;
-    const { container, searchText, button } = styles;
+    const { container, searchText } = styles;
 
     return (
       <View style={container}>
@@ -23,7 +23,7 @@ export class AppSearchBar extends Component {
         />
         <Button
           backgroundColor={inputText.length ? '#e62117' : '#CCCCCC'}
-          onPress={onPressSearch}
+          onPress={() => onPressSearch(inputText)}
           title={isLoadingVideos ? 'Loading...' : 'Search'}
         />
       </View>

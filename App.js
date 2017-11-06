@@ -16,8 +16,6 @@ export default class App extends Component {
   };
 
   searchYouTube = term => {
-    console.log('term:', term);
-
     this.setState({ loading: true });
     YTSearch({ key: this.API_KEY, term }, videos => {
       this.setState({
